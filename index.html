@@ -24,6 +24,24 @@
             line-height: 1.6;
         }
 
+        /* Language Toggle */
+        .lang-toggle {
+            background: rgba(26, 138, 109, 0.2);
+            border: 1px solid #1a8a6d;
+            color: #f8f8f8;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(26, 138, 109, 0.3);
+            transform: translateY(-1px);
+        }
+
         /* Header */
         header {
             position: fixed;
@@ -329,6 +347,11 @@
                 min-width: auto;
                 width: 100%;
             }
+
+            .lang-toggle {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
         }
 
         /* Smooth animations */
@@ -351,12 +374,13 @@
         <nav>
             <div class="logo">ARKOHS</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="#about" data-en="About" data-es="Acerca">About</a></li>
+                <li><a href="#portfolio" data-en="Portfolio" data-es="Portafolio">Portfolio</a></li>
+                <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+                <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
             </ul>
+            <button class="lang-toggle" id="langToggle">ES | EN</button>
             <div class="mobile-menu">
                 <span></span>
                 <span></span>
@@ -368,23 +392,23 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>ARKOHS GUERRERO</h1>
-            <div class="subtitle">Color • Aztec • Custom Tattoos</div>
+            <div class="subtitle" data-en="Color • Aztec • Custom Tattoos" data-es="Color • Azteca • Tatuajes Personalizados">Color • Aztec • Custom Tattoos</div>
             <div class="location">Houston, TX • @studio_a_htx</div>
             <div class="quote">"CREE EN TI, DUDA DEL RESTO!"</div>
         </div>
     </section>
 
     <section id="about" class="about">
-        <h2>About</h2>
+        <h2 data-en="About" data-es="Acerca">About</h2>
         <div class="about-content fade-in">
-            <p>Houston-based tattoo artist specializing in bold color work and Aztec/Mesoamerican-inspired designs. With over 20K followers and a passion for cultural artistry, I create large-scale sleeves and culturally rich pieces that tell stories through ink.</p>
+            <p data-en="Houston-based tattoo artist specializing in bold color work and Aztec/Mesoamerican-inspired designs. With over 20K followers and a passion for cultural artistry, I create large-scale sleeves and culturally rich pieces that tell stories through ink." data-es="Artista de tatuajes radicado en Houston especializado en trabajos de colores vibrantes y diseños inspirados en la cultura azteca/mesoamericana. Con más de 20K seguidores y una pasión por el arte cultural, creo mangas a gran escala y piezas culturalmente ricas que cuentan historias a través de la tinta.">Houston-based tattoo artist specializing in bold color work and Aztec/Mesoamerican-inspired designs. With over 20K followers and a passion for cultural artistry, I create large-scale sleeves and culturally rich pieces that tell stories through ink.</p>
             <br>
-            <p>Known for vibrant color realism and intricate Aztec themes, each piece is custom-designed on iPad and brought to life with precision and artistry. Working out of Studio A in downtown Houston, I believe in the power of self-belief: "Cree en ti, duda del resto."</p>
+            <p data-en="Known for vibrant color realism and intricate Aztec themes, each piece is custom-designed on iPad and brought to life with precision and artistry. Working out of Studio A in downtown Houston, I believe in the power of self-belief: \"Cree en ti, duda del resto.\"" data-es="Conocido por el realismo vibrante de colores y temas aztecas intrincados, cada pieza se diseña personalmente en iPad y se da vida con precisión y arte. Trabajando desde Studio A en el centro de Houston, creo en el poder de la autoconfianza: \"Cree en ti, duda del resto.\"">Known for vibrant color realism and intricate Aztec themes, each piece is custom-designed on iPad and brought to life with precision and artistry. Working out of Studio A in downtown Houston, I believe in the power of self-belief: "Cree en ti, duda del resto."</p>
         </div>
     </section>
 
     <section id="portfolio" class="portfolio">
-        <h2>Portfolio</h2>
+        <h2 data-en="Portfolio" data-es="Portafolio">Portfolio</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item fade-in">
                 <img src="img/portfolio_1.jpg" alt="Aztec-inspired tattoo artwork by Arkohs Guerrero" loading="lazy">
@@ -404,59 +428,95 @@
             <div class="portfolio-item fade-in">
                 <img src="img/portfolio_6.jpg" alt="iPad-designed custom tattoo artwork" loading="lazy">
             </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_7.jpg" alt="Traditional Aztec tattoo design" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_8.jpg" alt="Colorful cultural tattoo artwork" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_9.jpg" alt="Detailed sleeve tattoo work" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_10.jpg" alt="Vibrant color tattoo piece" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_11.jpg" alt="Custom Mesoamerican tattoo art" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_12.jpg" alt="Bold color realism tattoo" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_13.jpg" alt="Intricate Aztec-inspired design" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_14.jpg" alt="Large-scale tattoo masterpiece" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_15.jpg" alt="Cultural tattoo artwork" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_16.jpg" alt="Precision tattoo design" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_17.jpg" alt="Custom iPad-designed tattoo" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_18.jpg" alt="Professional tattoo artistry" loading="lazy">
+            </div>
         </div>
     </section>
 
     <section id="services" class="services">
-        <h2>Services</h2>
+        <h2 data-en="Services" data-es="Servicios">Services</h2>
         <div class="services-grid">
             <div class="service-card fade-in">
-                <h3>Color Tattoos</h3>
-                <p>Vibrant, bold color work that brings your vision to life with stunning realism and depth.</p>
+                <h3 data-en="Color Tattoos" data-es="Tatuajes de Color">Color Tattoos</h3>
+                <p data-en="Vibrant, bold color work that brings your vision to life with stunning realism and depth." data-es="Trabajo de colores vibrantes y audaces que da vida a tu visión con realismo impresionante y profundidad.">Vibrant, bold color work that brings your vision to life with stunning realism and depth.</p>
             </div>
             <div class="service-card fade-in">
-                <h3>Aztec/Mesoamerican</h3>
-                <p>Cultural designs honoring ancient traditions with modern artistic techniques.</p>
+                <h3 data-en="Aztec/Mesoamerican" data-es="Azteca/Mesoamericano">Aztec/Mesoamerican</h3>
+                <p data-en="Cultural designs honoring ancient traditions with modern artistic techniques." data-es="Diseños culturales que honran las tradiciones ancestrales con técnicas artísticas modernas.">Cultural designs honoring ancient traditions with modern artistic techniques.</p>
             </div>
             <div class="service-card fade-in">
-                <h3>Custom Design</h3>
-                <p>Unique artwork created specifically for you, designed on iPad for precision.</p>
+                <h3 data-en="Custom Design" data-es="Diseño Personalizado">Custom Design</h3>
+                <p data-en="Unique artwork created specifically for you, designed on iPad for precision." data-es="Arte único creado específicamente para ti, diseñado en iPad para mayor precisión.">Unique artwork created specifically for you, designed on iPad for precision.</p>
             </div>
             <div class="service-card fade-in">
-                <h3>Sleeves</h3>
-                <p>Full and half-sleeve masterpieces that flow with your body's natural lines.</p>
+                <h3 data-en="Sleeves" data-es="Mangas">Sleeves</h3>
+                <p data-en="Full and half-sleeve masterpieces that flow with your body's natural lines." data-es="Obras maestras de mangas completas y medias que fluyen con las líneas naturales de tu cuerpo.">Full and half-sleeve masterpieces that flow with your body's natural lines.</p>
             </div>
             <div class="service-card fade-in">
-                <h3>Back Pieces</h3>
-                <p>Large-scale artwork that tells your story across your entire canvas.</p>
+                <h3 data-en="Back Pieces" data-es="Piezas de Espalda">Back Pieces</h3>
+                <p data-en="Large-scale artwork that tells your story across your entire canvas." data-es="Arte a gran escala que cuenta tu historia a través de todo tu lienzo.">Large-scale artwork that tells your story across your entire canvas.</p>
             </div>
             <div class="service-card fade-in">
-                <h3>iPad Drawings</h3>
-                <p>Digital concept art and design work available for custom pieces.</p>
+                <h3 data-en="iPad Drawings" data-es="Dibujos en iPad">iPad Drawings</h3>
+                <p data-en="Digital concept art and design work available for custom pieces." data-es="Arte conceptual digital y trabajo de diseño disponible para piezas personalizadas.">Digital concept art and design work available for custom pieces.</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2>Book Your Session</h2>
+        <h2 data-en="Book Your Session" data-es="Agenda Tu Sesión">Book Your Session</h2>
         <div class="contact-info">
             <div class="contact-item fade-in">
-                <h3>Phone</h3>
+                <h3 data-en="Phone" data-es="Teléfono">Phone</h3>
                 <a href="tel:+18322740302">832-274-0302</a>
-                <p>Call or text to schedule</p>
+                <p data-en="Call or text to schedule" data-es="Llama o envía mensaje para agendar">Call or text to schedule</p>
             </div>
             <div class="contact-item fade-in">
                 <h3>Instagram</h3>
                 <a href="https://instagram.com/arkohs_guerrero" target="_blank">@arkohs_guerrero</a>
-                <p>DM for consultations</p>
+                <p data-en="DM for consultations" data-es="Mensaje directo para consultas">DM for consultations</p>
             </div>
             <div class="contact-item fade-in">
-                <h3>Email</h3>
+                <h3 data-en="Email" data-es="Correo">Email</h3>
                 <a href="mailto:Arkohsg3def@yahoo.com">Arkohsg3def@yahoo.com</a>
-                <p>For detailed inquiries</p>
+                <p data-en="For detailed inquiries" data-es="Para consultas detalladas">For detailed inquiries</p>
             </div>
             <div class="contact-item fade-in">
-                <h3>Location</h3>
+                <h3 data-en="Location" data-es="Ubicación">Location</h3>
                 <a href="https://instagram.com/studio_a_htx" target="_blank">Studio A</a>
                 <p>Downtown Houston, TX</p>
             </div>
@@ -464,11 +524,47 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Arkohs Guerrero. All rights reserved.</p>
-        <p>Website by <a href="#" style="color: #1a8a6d;">Bayou Web Studios</a></p>
+        <p data-en="© 2026 Arkohs Guerrero. All rights reserved." data-es="© 2026 Arkohs Guerrero. Todos los derechos reservados.">&copy; 2026 Arkohs Guerrero. All rights reserved.</p>
+        <p data-en="Website by" data-es="Sitio web por">Website by <a href="#" style="color: #1a8a6d;">Bayou Web Studios</a></p>
     </footer>
 
     <script>
+        // Language toggle functionality
+        let currentLang = localStorage.getItem('language') || 'en';
+        
+        function updateLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update all elements with language attributes
+            const elements = document.querySelectorAll('[data-en][data-es]');
+            elements.forEach(element => {
+                if (lang === 'es') {
+                    element.textContent = element.getAttribute('data-es');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // Update document language
+            document.documentElement.lang = lang;
+            
+            // Update toggle button
+            const toggle = document.getElementById('langToggle');
+            toggle.textContent = lang === 'en' ? 'ES | EN' : 'EN | ES';
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLanguage(currentLang);
+        });
+        
+        // Language toggle event listener
+        document.getElementById('langToggle').addEventListener('click', function() {
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+            updateLanguage(newLang);
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
