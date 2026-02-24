@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkohs Guerrero - Houston Tattoo Artist</title>
+    <meta name="description" content="Houston-based tattoo artist specializing in bold color work and Aztec/Mesoamerican-inspired designs. Color realism, sleeves, and custom tattoos.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #f8f8f8;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a8a6d;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #f8f8f8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #1a8a6d;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), 
+                        radial-gradient(circle at center, rgba(26, 138, 109, 0.1) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 100px,
+                rgba(26, 138, 109, 0.05) 100px,
+                rgba(26, 138, 109, 0.05) 102px
+            );
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1a8a6d;
+            font-weight: 600;
+        }
+
+        .hero .location {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #1a8a6d;
+            margin-top: 2rem;
+            font-weight: 500;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #1a8a6d;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #1a8a6d;
+        }
+
+        /* About Section */
+        .about-content {
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+        }
+
+        .portfolio-item:hover img {
+            filter: brightness(1.1);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: rgba(26, 138, 109, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(26, 138, 109, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(26, 138, 109, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #1a8a6d;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: rgba(26, 138, 109, 0.05);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: rgba(26, 138, 109, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            min-width: 250px;
+            border: 1px solid rgba(26, 138, 109, 0.3);
+        }
+
+        .contact-item h3 {
+            color: #1a8a6d;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: #f8f8f8;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a:hover {
+            color: #1a8a6d;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(26, 138, 109, 0.3);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #f8f8f8;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero .location,
+            .hero .quote {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-info {
+                gap: 1.5rem;
+            }
+
+            .contact-item {
+                min-width: auto;
+                width: 100%;
+            }
+        }
+
+        /* Smooth animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ARKOHS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>ARKOHS GUERRERO</h1>
+            <div class="subtitle">Color • Aztec • Custom Tattoos</div>
+            <div class="location">Houston, TX • @studio_a_htx</div>
+            <div class="quote">"CREE EN TI, DUDA DEL RESTO!"</div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About</h2>
+        <div class="about-content fade-in">
+            <p>Houston-based tattoo artist specializing in bold color work and Aztec/Mesoamerican-inspired designs. With over 20K followers and a passion for cultural artistry, I create large-scale sleeves and culturally rich pieces that tell stories through ink.</p>
+            <br>
+            <p>Known for vibrant color realism and intricate Aztec themes, each piece is custom-designed on iPad and brought to life with precision and artistry. Working out of Studio A in downtown Houston, I believe in the power of self-belief: "Cree en ti, duda del resto."</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_1.jpg" alt="Aztec-inspired tattoo artwork by Arkohs Guerrero" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_2.jpg" alt="Color realism tattoo by Arkohs Guerrero" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_3.jpg" alt="Mesoamerican themed tattoo sleeve" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_4.jpg" alt="Custom color tattoo design" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_5.jpg" alt="Large-scale back piece tattoo" loading="lazy">
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="img/portfolio_6.jpg" alt="iPad-designed custom tattoo artwork" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <h3>Color Tattoos</h3>
+                <p>Vibrant, bold color work that brings your vision to life with stunning realism and depth.</p>
+            </div>
+            <div class="service-card fade-in">
+                <h3>Aztec/Mesoamerican</h3>
+                <p>Cultural designs honoring ancient traditions with modern artistic techniques.</p>
+            </div>
+            <div class="service-card fade-in">
+                <h3>Custom Design</h3>
+                <p>Unique artwork created specifically for you, designed on iPad for precision.</p>
+            </div>
+            <div class="service-card fade-in">
+                <h3>Sleeves</h3>
+                <p>Full and half-sleeve masterpieces that flow with your body's natural lines.</p>
+            </div>
+            <div class="service-card fade-in">
+                <h3>Back Pieces</h3>
+                <p>Large-scale artwork that tells your story across your entire canvas.</p>
+            </div>
+            <div class="service-card fade-in">
+                <h3>iPad Drawings</h3>
+                <p>Digital concept art and design work available for custom pieces.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Book Your Session</h2>
+        <div class="contact-info">
+            <div class="contact-item fade-in">
+                <h3>Phone</h3>
+                <a href="tel:+18322740302">832-274-0302</a>
+                <p>Call or text to schedule</p>
+            </div>
+            <div class="contact-item fade-in">
+                <h3>Instagram</h3>
+                <a href="https://instagram.com/arkohs_guerrero" target="_blank">@arkohs_guerrero</a>
+                <p>DM for consultations</p>
+            </div>
+            <div class="contact-item fade-in">
+                <h3>Email</h3>
+                <a href="mailto:Arkohsg3def@yahoo.com">Arkohsg3def@yahoo.com</a>
+                <p>For detailed inquiries</p>
+            </div>
+            <div class="contact-item fade-in">
+                <h3>Location</h3>
+                <a href="https://instagram.com/studio_a_htx" target="_blank">Studio A</a>
+                <p>Downtown Houston, TX</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Arkohs Guerrero. All rights reserved.</p>
+        <p>Website by <a href="#" style="color: #1a8a6d;">Bayou Web Studios</a></p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements that should fade in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+
+        // Mobile menu toggle (basic implementation)
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
